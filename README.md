@@ -7,13 +7,16 @@ An Grape empty project with a structure similar to Rails.
 ## Structure
 
 - app
-  - api/v1
-    - base.rb: mount point for API V1
-    - posts.rb: sample posts API methods
+  - controllers
+    - v1
+      - base.rb: mount point for API V1
+      - posts.rb: sample posts API methods
+    - base.rb: mount point for API
   - models/v1
     - post.rb: sample post model
 - config
   - initializers/*: components configurations
+  - locales/*: locales files
   - application.rb, boot.rb. environment.rb: startup files
   - puma.rb: puma configuration
   - routes.rb: routes configuration
@@ -21,7 +24,11 @@ An Grape empty project with a structure similar to Rails.
 
 ## Optional components
 
-### Cors
+### Cors (default: enabled)
 
-- Decomment rack-cors in Gemfile
-- Decomment and edit configuration in: config.ru
+- To disable: remove rack-cors from *Gemfile* and the CORS lines in *config.ru*
+
+### Reload (default: enabled)
+
+- Note: not all changes are applied after a reload
+- To disable: remove Rack::Reloader line in *config.ru*

@@ -11,5 +11,5 @@ gem 'grape'
 # TODO: groups...
 gem 'pry'
 
-## Optionals
-# gem 'rack-cors'
+## Optional components
+gem 'rack-cors'
