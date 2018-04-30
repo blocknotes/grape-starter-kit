@@ -1,19 +1,21 @@
 # Grape Starter Kit
 
-An Grape empty project with a structure similar to Rails.
+An Grape starter project with a structure similar to Rails.
 
 [Grape](https://github.com/ruby-grape/grape) (*a REST-like API framework for Ruby*)
 
 Features:
 - simple structure ready to use
-- locale routes
+- rake tasks
+- localized routes
+- *GRAPE_ENV* for environment
 - command line tool (grape)
 
 ## Usage
 
 - Clone this project:
 `git clone https://github.com/blocknotes/grape-starter-kit`
-- Edit the API Base controller and the sample Posts controller
+- Edit the API Application controller and the sample Posts controller
 - Example route: `/api/v1/en/posts`
 
 ## Structure
@@ -26,20 +28,25 @@ Options available: console, server
 
 ### Files
 
-- app
-  - controllers
-    - v1
-      - base.rb: mount point for API V1
-      - posts.rb: sample posts API methods
-    - base.rb: mount point for API
-  - models/v1
-    - post.rb: sample post model
-- config
-  - initializers/*: components configurations
-  - locales/*: locales files
+- **app**
+  - **controllers**
+    - **v1**
+      - application_controller.rb: mount point for API V1
+      - posts_controller.rb: sample posts API methods
+    - application_controller.rb: mount point for API
+  - **models**
+    - **v1**
+      - post.rb: sample post model
+- **bin**
+  - grape: grape command line tool
+- **config**
+  - **initializers**: components configurations
+  - **locales**: locales files
   - application.rb, boot.rb. environment.rb: startup files
   - puma.rb: puma configuration
   - routes.rb: routes configuration
+- **lib**
+  - **tasks**: rake tasks
 - config.ru
 
 ### Optional components

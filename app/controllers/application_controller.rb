@@ -1,4 +1,4 @@
-class API::Base < Grape::API
+class API::ApplicationController < Grape::API
   format :json
   prefix :api
   rescue_from :all
@@ -13,7 +13,7 @@ class API::Base < Grape::API
       I18n.locale = params[:locale]
     end
 
-    mount API::V1::Base
+    mount API::V1::ApplicationController
   end
 
   route :any, '*path' do

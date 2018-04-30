@@ -4,13 +4,13 @@ require_relative 'config/environment'
 use Rack::Reloader
 
 # --- CORS ---------------------------------------------------------------------
-# require 'rack/cors'
-# use Rack::Cors do
-#   allow do
-#     origins '*'
-#     resource '*', headers: :any, methods: :get
-#   end
-# end
+require 'rack/cors'
+use Rack::Cors do
+  allow do
+    origins '*'
+    resource '*', headers: :any, methods: :get
+  end
+end
 
 # ------------------------------------------------------------------------------
 run API::Application

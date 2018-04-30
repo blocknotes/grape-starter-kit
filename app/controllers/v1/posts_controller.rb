@@ -1,5 +1,5 @@
 module API::V1
-  class Posts < Grape::API
+  class PostsController < Grape::API
     resource :posts do
       desc 'List of posts'
       get do
