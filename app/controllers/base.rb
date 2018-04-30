@@ -3,6 +3,7 @@ class API::Base < Grape::API
   prefix :api
   rescue_from :all
 
+  desc 'List all the available routes'
   get do
     { message: ::I18n.t('root_api'), routes: API::Base::routes.map{ |r| "#{r.request_method} #{r.path}" } }
   end

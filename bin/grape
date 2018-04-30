@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+require 'optparse'
+
+USAGE = "Usage: bin/grape [options]\n  c (or console) - start console\n  s (or server) - start server (pass any options)".freeze
+APP_PATH = File.expand_path('../config/application', __dir__)
+require_relative '../config/boot'
+# require 'rails/commands'
+
+args = ARGV.dup
+cmd = args.shift
+
+case cmd
+when 'c', 'console'
+  require 'irb'
+  require_relative '../config/environment'
+  IRB.start
+when 's', 'server'
+  args += ['-p', '3000'] unless args.include? '-p'
+  exec 'rackup', *args
+else
+  puts USAGE
+end
