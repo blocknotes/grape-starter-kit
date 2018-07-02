@@ -13,4 +13,4 @@ use Rack::Cors do
 end
 
 # ------------------------------------------------------------------------------
-run API::Application
+run Api::Application

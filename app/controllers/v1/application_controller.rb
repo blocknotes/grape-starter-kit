@@ -1,4 +1,4 @@
-module API::V1
+module Api::V1
   class ApplicationController < Grape::API
     version 'v1'
 

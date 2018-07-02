@@ -1,5 +1,5 @@
-module API
-  def API.routes_setup( api )
-    api.mount API::ApplicationController
+module Api
+  def Api.routes_setup( api )
+    api.mount Api::ApplicationController
   end
 end

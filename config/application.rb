@@ -3,7 +3,7 @@ require 'grape'
 
 Bundler.require
 
-module API
+module Api
   I18n.available_locales = [:en, :it]
 end  # API module definition
 
@@ -15,6 +15,6 @@ Dir[File.expand_path('../app/controllers', __dir__)+"/**/*.rb"].each { |file| re
 
 require_relative 'routes'
 
-class API::Application < Grape::API
-  API.routes_setup self
+class Api::Application < Grape::API
+  Api.routes_setup self
 end
